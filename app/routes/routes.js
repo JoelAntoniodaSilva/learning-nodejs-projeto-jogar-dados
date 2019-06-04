@@ -20,9 +20,7 @@ module.exports = function(application) {
 
 		console.log('routes: /lancarDados');
 
-		application.app.controllers.jogo.novoLancamento(application, req, res);
-		
-		res.send('Esta Funcionalidade Não foi implementada ainda');
+		application.app.controllers.jogo.novoLancamento(application, req, res);		
 
 	});
 
