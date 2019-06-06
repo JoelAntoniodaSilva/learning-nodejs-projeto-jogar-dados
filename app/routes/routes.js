@@ -27,16 +27,17 @@ module.exports = function(application) {
 	application.get('/reiniciar', function(req,res){
 
 		console.log('routes: /reiniciar');
+		application.app.controllers.jogo.reiniciar(application, req, res);
 		
-		res.send('Esta Funcionalidade Não foi implementada ainda');
 
 	});
 
 	application.get('/encerrar', function(req,res){
 
 		console.log('routes: /encerrar');
+		application.app.controllers.jogo.encerrar(application, req, res);
 		
-		res.send('Esta Funcionalidade Não foi implementada ainda');
+		
 
 	});
 
