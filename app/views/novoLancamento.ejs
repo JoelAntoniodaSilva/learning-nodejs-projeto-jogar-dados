@@ -8,33 +8,63 @@
 
 	<main>
 
-        <div class="container col-12 col-sm-8 col-md-6 bg-light p-2">
+
+
+        <div class="container col-12 col-sm-8 col-md-6 bg-light text-center p-2">
+
+        	<h1>Projeto jogar dados</h1>
 
         	<div class="container">
 
         		<div class="card-deck my-2">
 
         			<div class="col-6 p-2">
+        				<div class='card'>
+	        				<div class="card-header">Pontos Acumulados</div>	
+	        				<div class="card-body"><%= pontosAcumulados%></div>
+	        			</div>
+	        		</div>
 
-        				<div class="card-header">Pontos Acumulados</div>	
-        				<div class="card-body"><%=pontyos acumulados%></div>
-        				
+        			<div class="col-6 p-2">
+        				<div class='card'>	
+	        				<div class="card-header">Numero de lançamentos</div>
+	        			    <div class="card-body"><%= nLancamentos%></div>     
+	        			</div> 	
         			</div>
+
+        			<div class="col-12 p-2">
+        				<div class='card'>
+        					<div class="card-header">lançamento</div>
+	        			    <div class="card-body">
+	        			    <% for (var i=0; i < lancamento.length; i++) { %>
+	        			    <img src="images/dado<%= lancamento[i]%>.png"><%} %>		
+
+	        			    	</div>
+	        			</div>
+	        		</div>
+
+
+	        		<div class="col-6 p-2">
+        				<div class='card'>	
+	        				<div class="card-header">Jogo Lançamento atual</div>
+	        			    <div class="card-body"><%= jogoLancamento%></div>     
+	        			</div> 	
+        			</div>
+
+	        		<div class="col-6 p-2">
+        				<div class='card'>
+	        				<div class="card-header">Pontuação Lançamento</div>	
+	        				<div class="card-body"><%= pontosLancamento%></div>
+	        			</div>
+	        		</div>
+
+        			
+
+
         		</div>
         	</div>
         </div>
-		
-		<h1>Projeto Jogar Dados</h1>
-
-		<p>Pontuação acumulada: <%= pontosAcumulados%></p>
-
-		<p> Numero de lançamentos : <%= nLancamentos %></p>
-
-		<p>Lançamento: <%= lancamento %></p>
-
-		<p>Jogo Lançamento atual: <%= jogoLancamento %></p>
-
-		<p>Pontuação Lançamento: <%= pontosLancamento %></p>
+	
 
 		<button type="button" id="buttonLancarDados">Lançar Dados</button>
 
