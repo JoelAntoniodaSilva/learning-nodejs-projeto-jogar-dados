@@ -1,4 +1,4 @@
-function Jogo(dados  = 5, lados = 6) {
+function Jogo(dados = 5, lados = 6) {
 
 	console.log('model: executar construtor de jogo');
 	this.dados = dados;
@@ -37,9 +37,9 @@ Jogo.prototype.contarDados = function (lancamento) {
 	return contagem;
 }
 
-const GENERALA = { jogo : 'Generala', pontos : 100 }
-const POKER    = { jogo : 'Poker'   , pontos : 100 }
-const FULL     = { jogo : 'Full'    , pontos : 50  }
+const GENERALA = { jogo : 'Generala Parabéns você conseguiu a pontuação máxima', pontos : 100 }
+const POKER    = { jogo : 'Poker Olá você alcançou 50 pontos'   , pontos : 50 }
+const FULL     = { jogo : 'Full Parabens você atingiu 30 pontos'    , pontos : 30  }
 const NADA     = { jogo : 'Nenhum'  , pontos : 0   }
 
 Jogo.prototype.analizarLancamento = function(lancamento){
@@ -49,7 +49,7 @@ Jogo.prototype.analizarLancamento = function(lancamento){
 
 	if (contagem.find(e => e === 5))
 		resultado = GENERALA;
-	
+
 	else if(contagem.find(e => e === 4))
 		resultado = POKER;
 
@@ -80,6 +80,7 @@ Jogo.prototype.novoLancamento = function(){
 		pontosLancamento : analiseLancamento.pontos
 
 	};
+
 	return resultado;
 }	
 
