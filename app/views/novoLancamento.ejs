@@ -12,30 +12,32 @@
         <div class="container col-12 col-sm-8 col-md-6 bg-light text-center p-2">
 
         	<h1>Projeto jogar dados</h1>
+        	
 
-        	<div class="container">
+        	<div class="container bg-secondary ">
 
         		<div class="card-deck my-2">
+
 
         			<div class="col-6 p-2">
         				<div class='card'>
         					
-	        				<div class="card-header">Pontos Acumulados</div>	
-	        				<div class="card-body"><%= pontosAcumulados%></div>
+	        				<div class="card-header bg-success">Pontos Acumulados</div>	
+	        				<div class="card-body  bg-warning "><%= pontosAcumulados%></div>
 	        			</div>
 	        		</div>
 
         			<div class="col-6 p-2">
         				<div class='card'>	
-	        				<div class="card-header">Numero de lançamentos</div>
-	        			    <div class="card-body"><%= nLancamentos%></div>     
+	        				<div class="card-header bg-success">Numero de lançamentos</div>
+	        			    <div class="card-body  bg-warning "><%= nLancamentos%></div>     
 	        			</div> 	
         			</div>
 
         			<div class="col-12 p-2">
         				<div class='card'>
-        					<div class="card-header">lançamento</div>
-	        			    <div class="card-body">
+        					<div class="card-header bg-success">lançamento</div>
+	        			    <div class="card-body  bg-danger ">
 	        			    <% for (var i=0; i < lancamento.length; i++) { %>
 	        			    <img src="images/dado<%= lancamento[i]%>.png"><%} %>		
 
@@ -46,22 +48,39 @@
 
 	        		<div class="col-6 p-2">
         				<div class='card'>	
-	        				<div class="card-header">Jogo Lançamento atual</div>
-	        			    <div class="card-body"><%= jogoLancamento%></div>     
+	        				<div class="card-header bg-success">Jogo Lançamento atual</div>
+	        			    <div class="card-body bg-warning "><%= jogoLancamento%></div>     
 	        			</div> 	
         			</div>
 
 	        		<div class="col-6 p-2">
         				<div class='card'>
-	        				<div class="card-header">Pontuação Lançamento</div>	
-	        				<div class="card-body"><%= pontosLancamento%></div>
+	        				<div class="card-header bg-success">Pontuação Lançamento</div>	
+	        				<div class="card-body  bg-warning "><%= pontosLancamento%></div>
+	        			</div>	        			
+	        		</div>
+
+					<div class="col-6 p-2">
+        				<div class='card'>
+	        				<div class="card-header bg-light">Numero de Pokers</div>	
+	        				<div class="card-body  bg-primary "><%= nPoker %></div>
 	        			</div>
 	        		</div>
 
-        			
+                    <div class="col-6 p-2">
+        				<div class='card'>
+	        				<div class="card-header bg-light">Numero de Generala</div>	
+	        				<div class="card-body  bg-info "><%= nGenerala %></div>
+	        			</div>
+	        		</div>
 
+                    <div class="col-12 p-2">
+        				<div class='card'>
+	        				<div class="card-header bg-light">Numero de Full</div>	
+	        				<div class="card-body  bg-warning "><%= nFull %></div>
+	        			</div>
 
-
+	        		</div>
         		</div>
         	</div>
         </div>
@@ -70,11 +89,12 @@
 
 		<button class="btn btn-success" id="buttonLancarDados">Lançar Dados</button>
 
-		<button class="btn btn-success" id="buttonReiniciarJogo">Reiniciar</button>
+		<button class="btn btn-warning" id="buttonReiniciarJogo">Reiniciar</button>
 
-		<button class="btn btn-success" id="buttonEncerrarJogo">Encerrar</button>
+		<button class="btn btn-danger" id="buttonEncerrarJogo">Encerrar</button>
 
-   </div>
+    </div>
+    
 
 	</main>
 

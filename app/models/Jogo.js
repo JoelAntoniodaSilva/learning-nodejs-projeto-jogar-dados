@@ -5,12 +5,18 @@ function Jogo(dados = 5, lados = 6) {
 	this.lados = lados;
 	this.pontos = 0;
 	this.n = 0;
+	this.nGenerala = 0;
+	this.nPoker = 0;
+	this.nFull = 0;
 }
 
 Jogo.prototype.novoJogo = function () {
 	console.log('model: novoJogo');
 	this.pontos = 0;
 	this.n = 0; 
+	this.nGenerala = 0;
+	this.nPoker = 0;
+	this.nFull = 0;
 }
 
 Jogo.prototype.lancarUmDado = function(){
@@ -37,9 +43,9 @@ Jogo.prototype.contarDados = function (lancamento) {
 	return contagem;
 }
 
-const GENERALA = { jogo : 'Generala Parabéns você conseguiu a pontuação máxima', pontos : 100 }
-const POKER    = { jogo : 'Poker Olá você alcançou 50 pontos'   , pontos : 50 }
-const FULL     = { jogo : 'Full Parabens você atingiu 30 pontos'    , pontos : 30  }
+const GENERALA = { jogo : 'Generala *Parabéns você conseguiu a pontuação máxima*', pontos : 100 }
+const POKER    = { jogo : 'Poker *Olá você alcançou 50 pontos*'   , pontos : 50 }
+const FULL     = { jogo : 'Full *Parabens você atingiu 30 pontos*'    , pontos : 30  }
 const NADA     = { jogo : 'Nenhum'  , pontos : 0   }
 
 Jogo.prototype.analizarLancamento = function(lancamento){
@@ -47,14 +53,21 @@ Jogo.prototype.analizarLancamento = function(lancamento){
 	var contagem = this.contarDados(lancamento);
 	var resultado;
 
-	if (contagem.find(e => e === 5))
+	if (contagem.find(e => e === 5)){
 		resultado = GENERALA;
+		this.nGenerala += 1;
+	}
 
-	else if(contagem.find(e => e === 4))
+	else if(contagem.find(e => e === 4)){
 		resultado = POKER;
+		this.nPoker +=  1; 
+	}
 
-	else if(contagem.find(e => e === 3) && contagem.find (e => e === 2) )
+
+	else if(contagem.find(e => e === 3) && contagem.find (e => e === 2)){
 		resultado = FULL;
+		this.nFull += 1;
+	}
 
 	else 
 		resultado = NADA
@@ -77,7 +90,10 @@ Jogo.prototype.novoLancamento = function(){
 		nLancamentos : this.n,
 		lancamento : lancamento,
 		jogoLancamento : analiseLancamento.jogo,
-		pontosLancamento : analiseLancamento.pontos
+		pontosLancamento : analiseLancamento.pontos,
+		nGenerala: this.nGenerala,
+		nPoker: this.nPoker,
+		nFull: this.nFull
 
 	};
 
